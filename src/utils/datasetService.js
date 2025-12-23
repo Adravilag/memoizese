@@ -5,7 +5,7 @@
 
 // Configuración del repositorio
 const GITHUB_CONFIG = {
-  owner: 'adravilag',
+  owner: 'Adravilag',
   repo: 'memoizese',
   branch: 'main',
   datasetsPath: 'datasets',
