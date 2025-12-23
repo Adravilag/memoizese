@@ -12,6 +12,7 @@ import {
   ScrollView,
 } from 'react-native';
 import * as Speech from 'expo-speech';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import {
   getCardsToReview,
@@ -44,6 +45,7 @@ export default function StudyScreen({ route, navigation }) {
   // studyMode: 'normal' | 'problematic' | 'review' - tipo de tarjetas a cargar
   const { deckId, masteryMode: initialMasteryMode = false, studyMode = 'normal' } = route.params || {};
   const { theme } = useTheme();
+  const insets = useSafeAreaInsets();
   
   const [deck, setDeck] = useState(null);
   const [cards, setCards] = useState([]);
@@ -1017,7 +1019,7 @@ export default function StudyScreen({ route, navigation }) {
 
       {/* Response Buttons - Disabled when not flipped */}
       {!isFlipped && !showWriteMode && (
-        <View style={[styles.responseContainer, { opacity: 0.4 }]}>
+        <View style={[styles.responseContainer, { opacity: 0.4, paddingBottom: 30 + insets.bottom }]}>
           <Text style={[styles.responsePrompt, { color: theme.colors.textSecondary }]}>
             ¿Qué tan bien lo recordaste?
           </Text>
@@ -1052,7 +1054,7 @@ export default function StudyScreen({ route, navigation }) {
 
       {/* Response Buttons - Active when flipped */}
       {isFlipped && (
-        <View style={styles.responseContainer}>
+        <View style={[styles.responseContainer, { paddingBottom: 30 + insets.bottom }]}>
           <Text style={[styles.responsePrompt, { color: theme.colors.textSecondary }]}>
             ¿Qué tan bien lo recordaste?
           </Text>

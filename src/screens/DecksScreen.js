@@ -12,6 +12,7 @@ import {
   ScrollView,
 } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTheme } from '../context/ThemeContext';
 import {
   getDecks,
@@ -45,6 +46,7 @@ const DECK_COLORS = [
 
 export default function DecksScreen({ navigation }) {
   const { theme, toggleTheme } = useTheme();
+  const insets = useSafeAreaInsets();
   const [decks, setDecks] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -343,7 +345,7 @@ export default function DecksScreen({ navigation }) {
         data={decks}
         renderItem={renderDeckItem}
         keyExtractor={(item) => item.id}
-        contentContainerStyle={decks.length === 0 ? styles.emptyList : styles.listContent}
+        contentContainerStyle={decks.length === 0 ? styles.emptyList : [styles.listContent, { paddingBottom: 100 + insets.bottom }]}
         ListEmptyComponent={renderEmptyState}
         refreshControl={
           <RefreshControl
@@ -365,7 +367,7 @@ export default function DecksScreen({ navigation }) {
       )}
 
       {/* Botones FAB simplificados */}
-      <View style={styles.fabContainer}>
+      <View style={[styles.fabContainer, { bottom: 20 + insets.bottom }]}>
         {/* Menú expandible */}
         {fabMenuOpen && (
           <View style={styles.fabMenu}>
@@ -571,7 +573,7 @@ const styles = StyleSheet.create({
   },
   listContent: {
     padding: 16,
-    paddingBottom: 100,
+    // paddingBottom se aplica dinámicamente con insets
   },
   emptyList: {
     flex: 1,
@@ -676,6 +678,7 @@ const styles = StyleSheet.create({
     right: 20,
     bottom: 20,
     alignItems: 'flex-end',
+    // El padding inferior se aplica dinámicamente con insets
   },
   fabOverlay: {
     position: 'absolute',

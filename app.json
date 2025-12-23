@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Memoizese",
-    "slug": "memoizese",
+    "slug": "testeate",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -46,6 +46,7 @@
       "eas": {
         "projectId": "1d8a3f48-fba8-498b-89c4-d339f207637c"
       }
-    }
+    },
+    "owner": "adravilag"
   }
 }
