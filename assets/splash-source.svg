@@ -1,0 +1,60 @@
+<svg width="1284" height="2778" viewBox="0 0 1284 2778" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="splashBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2E78C7"/>
+      <stop offset="100%" style="stop-color:#1B5A9E"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fondo -->
+  <rect width="1284" height="2778" fill="url(#splashBg)"/>
+  
+  <!-- Icono centrado -->
+  <g transform="translate(642, 1100)">
+    <!-- Libro abierto -->
+    <g transform="scale(1.5)">
+      <!-- Sombra del libro -->
+      <ellipse cx="0" cy="280" rx="280" ry="40" fill="rgba(0,0,0,0.15)"/>
+      
+      <!-- Página izquierda -->
+      <path d="M-40 -200 L-40 200 Q-180 180 -280 200 L-280 -180 Q-180 -200 -40 -200 Z" 
+            fill="#FFFFFF" stroke="#E0E8F0" stroke-width="4"/>
+      
+      <!-- Página derecha -->
+      <path d="M40 -200 L40 200 Q180 180 280 200 L280 -180 Q180 -200 40 -200 Z" 
+            fill="#FFFFFF" stroke="#E0E8F0" stroke-width="4"/>
+      
+      <!-- Lomo del libro -->
+      <path d="M-40 -200 L-40 200 L40 200 L40 -200 Z" fill="#E8F0F8"/>
+      
+      <!-- Líneas de texto -->
+      <line x1="-220" y1="-120" x2="-80" y2="-120" stroke="#B0C4DE" stroke-width="8" stroke-linecap="round"/>
+      <line x1="-220" y1="-60" x2="-100" y2="-60" stroke="#B0C4DE" stroke-width="8" stroke-linecap="round"/>
+      <line x1="-220" y1="0" x2="-80" y2="0" stroke="#B0C4DE" stroke-width="8" stroke-linecap="round"/>
+      <line x1="-220" y1="60" x2="-120" y2="60" stroke="#B0C4DE" stroke-width="8" stroke-linecap="round"/>
+      <line x1="-220" y1="120" x2="-80" y2="120" stroke="#B0C4DE" stroke-width="8" stroke-linecap="round"/>
+      
+      <line x1="80" y1="-120" x2="220" y2="-120" stroke="#B0C4DE" stroke-width="8" stroke-linecap="round"/>
+      <line x1="100" y1="-60" x2="220" y2="-60" stroke="#B0C4DE" stroke-width="8" stroke-linecap="round"/>
+      <line x1="80" y1="0" x2="220" y2="0" stroke="#B0C4DE" stroke-width="8" stroke-linecap="round"/>
+      <line x1="120" y1="60" x2="220" y2="60" stroke="#B0C4DE" stroke-width="8" stroke-linecap="round"/>
+      <line x1="80" y1="120" x2="220" y2="120" stroke="#B0C4DE" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Círculo de check -->
+    <g transform="translate(280, -300)">
+      <circle cx="0" cy="0" r="120" fill="#22C55E" stroke="#FFFFFF" stroke-width="12"/>
+      <path d="M-50 0 L-15 40 L55 -40" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+  
+  <!-- Texto Testeate -->
+  <text x="642" y="1750" font-family="Arial, sans-serif" font-size="100" font-weight="bold" fill="#FFFFFF" text-anchor="middle">
+    Testeate
+  </text>
+  
+  <!-- Subtítulo -->
+  <text x="642" y="1850" font-family="Arial, sans-serif" font-size="40" fill="rgba(255,255,255,0.8)" text-anchor="middle">
+    Prepara tus oposiciones
+  </text>
+</svg>

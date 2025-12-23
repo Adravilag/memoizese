@@ -1,0 +1,243 @@
+# Vocabulary: Communications and Technology (B1-B2)
+
+1. What is "bandwidth"?
+a) A musical instrument
+b) The capacity for data transfer
+c) A type of cable
+d) A computer brand
+
+2. What does "to download" mean?
+a) To delete files
+b) To transfer data from a remote system
+c) To upload files
+d) To print documents
+
+3. What is a "browser"?
+a) A person who shops
+b) Software for accessing websites
+c) A type of computer
+d) A storage device
+
+4. What does "wireless" mean?
+a) With cables
+b) Without cables, using radio waves
+c) Without power
+d) Connected to electricity
+
+5. What is "malware"?
+a) Useful software
+b) Malicious software
+c) Hardware
+d) An operating system
+
+6. What does "to stream" mean?
+a) To download completely
+b) To play media as it is being received
+c) To delete files
+d) To print
+
+7. What is a "firewall"?
+a) A physical wall
+b) Security system blocking unauthorized access
+c) A heating device
+d) A type of cable
+
+8. What does "to scroll" mean?
+a) To type
+b) To move through content on a screen
+c) To delete
+d) To print
+
+9. What is "cloud storage"?
+a) Weather data
+b) Remote data storage on the internet
+c) Physical hard drives
+d) USB storage
+
+10. What does "to upload" mean?
+a) To delete
+b) To send data to a remote system
+c) To download
+d) To print
+
+11. What is a "hashtag"?
+a) A price tag
+b) A # symbol used to categorize content
+c) A type of folder
+d) A password
+
+12. What does "viral" mean (internet)?
+a) Related to illness
+b) Spreading rapidly online
+c) Private
+d) Deleted
+
+13. What is "encryption"?
+a) Writing clearly
+b) Converting data into a secure code
+c) Deleting files
+d) Printing documents
+
+14. What does "to log in" mean?
+a) To turn off
+b) To access an account with credentials
+c) To delete
+d) To exit
+
+15. What is a "podcast"?
+a) A type of cable
+b) A digital audio program
+c) A video game
+d) An email
+
+16. What is "spam"?
+a) Useful emails
+b) Unwanted messages sent in bulk
+c) Important notifications
+d) Personal messages
+
+17. What does "to sync" mean?
+a) To delete
+b) To make devices have the same data
+c) To disconnect
+d) To reset
+
+18. What is a "screenshot"?
+a) A camera
+b) An image capture of a screen
+c) A video
+d) A sound recording
+
+19. What does "offline" mean?
+a) Connected to the internet
+b) Not connected to the internet
+c) Online
+d) Streaming
+
+20. What is "artificial intelligence" (AI)?
+a) Human intelligence
+b) Computer simulation of human intelligence
+c) Natural behavior
+d) Manual work
+
+21. What does "to back up" mean?
+a) To delete
+b) To make a copy for safekeeping
+c) To erase
+d) To restart
+
+22. What is a "notification"?
+a) A secret message
+b) An alert or message from an app
+c) A deleted item
+d) A password
+
+23. What does "touchscreen" mean?
+a) A regular screen
+b) A screen operated by touching it
+c) A broken screen
+d) A small screen
+
+24. What is "cybersecurity"?
+a) Physical security
+b) Protection of computer systems
+c) Building security
+d) Personal safety
+
+25. What does "to update" mean?
+a) To delete
+b) To install a newer version
+c) To downgrade
+d) To uninstall
+
+26. What is a "QR code"?
+a) A barcode that stores information
+b) A password
+c) A type of file
+d) An email address
+
+27. What does "to bookmark" mean?
+a) To delete
+b) To save a webpage for quick access
+c) To print
+d) To share
+
+28. What is "two-factor authentication"?
+a) One password
+b) Security using two verification methods
+c) No security
+d) A username
+
+29. What does "to reboot" mean?
+a) To delete
+b) To restart a computer
+c) To turn off permanently
+d) To install
+
+30. What is a "server"?
+a) A person who serves
+b) A computer that provides services to others
+c) A type of cable
+d) A monitor
+
+31. What does "Bluetooth" mean?
+a) A dental condition
+b) Wireless technology for short distances
+c) A type of cable
+d) A color
+
+32. What is "virtual reality" (VR)?
+a) Real life
+b) Computer-generated simulated environment
+c) A video call
+d) Online shopping
+
+33. What does "to unsubscribe" mean?
+a) To join
+b) To stop receiving communications
+c) To subscribe more
+d) To share
+
+34. What is "phishing"?
+a) A water sport
+b) Fraudulent attempt to get sensitive info
+c) A computer game
+d) A type of email
+
+35. What does "lag" mean?
+a) Speed increase
+b) Delay in response time
+c) Fast connection
+d) Good performance
+
+36. What is a "chatbot"?
+a) A person
+b) A program that simulates conversation
+c) A type of robot
+d) A video game
+
+37. What does "to debug" mean?
+a) To add errors
+b) To remove errors from software
+c) To install software
+d) To delete software
+
+38. What is "GPS"?
+a) A type of computer
+b) Global Positioning System
+c) A social network
+d) A browser
+
+39. What does "to customize" mean?
+a) To make standard
+b) To modify according to preferences
+c) To delete
+d) To copy
+
+40. What is "a trending topic"?
+a) An old topic
+b) A subject currently popular online
+c) A private topic
+d) A deleted topic
+
+[BOLD_ANSWERS: b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, b, a, b, b, b, b, b, b, b, b, b, b, b, b, b, b]

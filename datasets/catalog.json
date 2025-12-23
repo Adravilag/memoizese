@@ -1,0 +1,243 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2024-12-23",
+  "categories": [
+    {
+      "id": "vocabulary",
+      "name": "📚 Vocabulario B1-B2",
+      "description": "Colección de vocabulario Cambridge B1-B2"
+    },
+    {
+      "id": "grammar",
+      "name": "📝 Gramática",
+      "description": "Tests de gramática inglesa"
+    },
+    {
+      "id": "idioms",
+      "name": "💬 Idioms & Expressions",
+      "description": "Expresiones idiomáticas"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "vocab_01_clothes",
+      "name": "👕 Clothes and Accessories",
+      "description": "Vocabulario de ropa y accesorios",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/01_clothes_and_accessories.txt",
+      "version": "1.0.0",
+      "size": 8500
+    },
+    {
+      "id": "vocab_02_colours",
+      "name": "🎨 Colours",
+      "description": "Vocabulario de colores",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/02_colours.txt",
+      "version": "1.0.0",
+      "size": 7200
+    },
+    {
+      "id": "vocab_03_tech",
+      "name": "📱 Communications & Technology",
+      "description": "Vocabulario de comunicación y tecnología",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/03_communications_and_technology.txt",
+      "version": "1.0.0",
+      "size": 9100
+    },
+    {
+      "id": "vocab_04_education",
+      "name": "📚 Education",
+      "description": "Vocabulario de educación",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/04_education.txt",
+      "version": "1.0.0",
+      "size": 8300
+    },
+    {
+      "id": "vocab_05_entertainment",
+      "name": "🎬 Entertainment & Media",
+      "description": "Vocabulario de entretenimiento y medios",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/05_entertainment_and_media.txt",
+      "version": "1.0.0",
+      "size": 8700
+    },
+    {
+      "id": "vocab_06_environment",
+      "name": "🌍 Environment",
+      "description": "Vocabulario de medio ambiente",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/06_environment.txt",
+      "version": "1.0.0",
+      "size": 8400
+    },
+    {
+      "id": "vocab_07_food",
+      "name": "🍽️ Food and Drink",
+      "description": "Vocabulario de comida y bebida",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/07_food_and_drink.txt",
+      "version": "1.0.0",
+      "size": 8200
+    },
+    {
+      "id": "vocab_08_health",
+      "name": "🏥 Health, Medicine & Exercise",
+      "description": "Vocabulario de salud, medicina y ejercicio",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/08_health_medicine_exercise.txt",
+      "version": "1.0.0",
+      "size": 8900
+    },
+    {
+      "id": "vocab_09_hobbies",
+      "name": "🎮 Hobbies and Leisure",
+      "description": "Vocabulario de hobbies y ocio",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/09_hobbies_and_leisure.txt",
+      "version": "1.0.0",
+      "size": 8100
+    },
+    {
+      "id": "vocab_10_house",
+      "name": "🏠 House and Home",
+      "description": "Vocabulario de casa y hogar",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/10_house_and_home.txt",
+      "version": "1.0.0",
+      "size": 8000
+    },
+    {
+      "id": "vocab_11_language",
+      "name": "💬 Language",
+      "description": "Vocabulario sobre lenguaje",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/11_language.txt",
+      "version": "1.0.0",
+      "size": 7800
+    },
+    {
+      "id": "vocab_12_feelings",
+      "name": "💭 Personal Feelings & Opinions",
+      "description": "Vocabulario de sentimientos y opiniones",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/12_personal_feelings_opinions_experiences.txt",
+      "version": "1.0.0",
+      "size": 9200
+    },
+    {
+      "id": "vocab_13_places",
+      "name": "🏛️ Places, Buildings & Countryside",
+      "description": "Vocabulario de lugares, edificios y campo",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/13_places_buildings_countryside.txt",
+      "version": "1.0.0",
+      "size": 8600
+    },
+    {
+      "id": "vocab_14_city",
+      "name": "🏙️ Town and City Services",
+      "description": "Vocabulario de ciudad y servicios",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/14_town_and_city_services.txt",
+      "version": "1.0.0",
+      "size": 8300
+    },
+    {
+      "id": "vocab_15_shopping",
+      "name": "🛒 Shopping",
+      "description": "Vocabulario de compras",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/15_shopping.txt",
+      "version": "1.0.0",
+      "size": 7900
+    },
+    {
+      "id": "vocab_16_sport",
+      "name": "⚽ Sport",
+      "description": "Vocabulario de deportes",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/16_sport.txt",
+      "version": "1.0.0",
+      "size": 8100
+    },
+    {
+      "id": "vocab_17_nature",
+      "name": "🌿 The Natural World",
+      "description": "Vocabulario del mundo natural",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/17_the_natural_world.txt",
+      "version": "1.0.0",
+      "size": 8400
+    },
+    {
+      "id": "vocab_18_travel",
+      "name": "✈️ Time, Travel & Transport",
+      "description": "Vocabulario de tiempo, viajes y transporte",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/18_time_travel_transport.txt",
+      "version": "1.0.0",
+      "size": 8700
+    },
+    {
+      "id": "vocab_19_weather",
+      "name": "🌤️ Weather",
+      "description": "Vocabulario del clima",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/19_weather.txt",
+      "version": "1.0.0",
+      "size": 7600
+    },
+    {
+      "id": "vocab_20_work",
+      "name": "💼 Work and Jobs",
+      "description": "Vocabulario de trabajo y empleos",
+      "category": "vocabulary",
+      "level": "B1-B2",
+      "questionCount": 50,
+      "file": "vocabulary/20_work_and_jobs.txt",
+      "version": "1.0.0",
+      "size": 8500
+    }
+  ]
+}

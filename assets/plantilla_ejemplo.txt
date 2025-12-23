@@ -1,0 +1,63 @@
+# Test de Constitución Española - Ejemplo
+
+1. ¿En qué año se aprobó la Constitución Española?
+a) 1975
+b) 1976
+c) 1977
+d) 1978
+
+2. ¿Cuál es el artículo que establece que España es un Estado social y democrático de Derecho?
+a) Artículo 1
+b) Artículo 2
+c) Artículo 3
+d) Artículo 4
+
+3. ¿Cuántos títulos tiene la Constitución Española?
+a) 8 títulos
+b) 9 títulos
+c) 10 títulos más el Título Preliminar
+d) 12 títulos
+
+4. ¿Qué artículo regula el derecho a la educación?
+a) Artículo 25
+b) Artículo 26
+c) Artículo 27
+d) Artículo 28
+
+5. ¿Cuál es la capital del Estado según la Constitución?
+a) No se menciona en la Constitución
+b) Se establece en una Ley Orgánica
+c) Barcelona
+d) Madrid, según el artículo 5
+
+6. ¿Qué mayoría se necesita para reformar el Título Preliminar de la Constitución?
+a) Mayoría simple
+b) Mayoría absoluta
+c) Mayoría de dos tercios y referéndum
+d) No se puede reformar
+
+7. ¿Quién es el Jefe del Estado según la Constitución?
+a) El Presidente del Gobierno
+b) El Rey
+c) El Presidente del Congreso
+d) El Presidente del Tribunal Constitucional
+
+8. ¿Cuántos diputados tiene el Congreso según la Constitución?
+a) Entre 300 y 350
+b) Entre 350 y 400
+c) Entre 300 y 400
+d) Exactamente 350
+
+9. ¿Qué artículo regula el derecho a la tutela judicial efectiva?
+a) Artículo 23
+b) Artículo 24
+c) Artículo 25
+d) Artículo 26
+
+10. ¿Cuál es el idioma oficial del Estado?
+a) Español y catalán
+b) Español y las lenguas cooficiales
+c) El castellano
+d) Todas las lenguas de España
+
+[BOLD_ANSWERS: d, a, c, c, d, c, b, c, b, c]

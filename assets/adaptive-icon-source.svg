@@ -1,0 +1,37 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Libro abierto centrado para adaptive icon -->
+  <g transform="translate(512, 480)">
+    <!-- Sombra del libro -->
+    <ellipse cx="0" cy="250" rx="240" ry="35" fill="rgba(0,0,0,0.2)"/>
+    
+    <!-- Página izquierda -->
+    <path d="M-35 -180 L-35 180 Q-160 160 -250 180 L-250 -160 Q-160 -180 -35 -180 Z" 
+          fill="#FFFFFF" stroke="#C0D0E0" stroke-width="4"/>
+    
+    <!-- Página derecha -->
+    <path d="M35 -180 L35 180 Q160 160 250 180 L250 -160 Q160 -180 35 -180 Z" 
+          fill="#FFFFFF" stroke="#C0D0E0" stroke-width="4"/>
+    
+    <!-- Lomo del libro -->
+    <path d="M-35 -180 L-35 180 L35 180 L35 -180 Z" fill="#D0E0F0"/>
+    
+    <!-- Líneas de texto -->
+    <line x1="-200" y1="-100" x2="-70" y2="-100" stroke="#B0C4DE" stroke-width="7" stroke-linecap="round"/>
+    <line x1="-200" y1="-45" x2="-90" y2="-45" stroke="#B0C4DE" stroke-width="7" stroke-linecap="round"/>
+    <line x1="-200" y1="10" x2="-70" y2="10" stroke="#B0C4DE" stroke-width="7" stroke-linecap="round"/>
+    <line x1="-200" y1="65" x2="-110" y2="65" stroke="#B0C4DE" stroke-width="7" stroke-linecap="round"/>
+    <line x1="-200" y1="120" x2="-70" y2="120" stroke="#B0C4DE" stroke-width="7" stroke-linecap="round"/>
+    
+    <line x1="70" y1="-100" x2="200" y2="-100" stroke="#B0C4DE" stroke-width="7" stroke-linecap="round"/>
+    <line x1="90" y1="-45" x2="200" y2="-45" stroke="#B0C4DE" stroke-width="7" stroke-linecap="round"/>
+    <line x1="70" y1="10" x2="200" y2="10" stroke="#B0C4DE" stroke-width="7" stroke-linecap="round"/>
+    <line x1="110" y1="65" x2="200" y2="65" stroke="#B0C4DE" stroke-width="7" stroke-linecap="round"/>
+    <line x1="70" y1="120" x2="200" y2="120" stroke="#B0C4DE" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Círculo de check -->
+  <g transform="translate(680, 280)">
+    <circle cx="0" cy="0" r="100" fill="#22C55E" stroke="#FFFFFF" stroke-width="10"/>
+    <path d="M-42 0 L-12 35 L46 -35" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

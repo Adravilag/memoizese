@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "Memoizese",
+    "slug": "memoizese",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "backgroundColor": "#4A90D9",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.memoizese.app",
+      "splash": {
+        "image": "./assets/splash.png",
+        "backgroundColor": "#4A90D9",
+        "resizeMode": "contain"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#4A90D9"
+      },
+      "package": "com.memoizese.app",
+      "splash": {
+        "image": "./assets/splash.png",
+        "backgroundColor": "#4A90D9",
+        "resizeMode": "contain"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-document-picker",
+      "expo-asset"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1d8a3f48-fba8-498b-89c4-d339f207637c"
+      }
+    }
+  }
+}

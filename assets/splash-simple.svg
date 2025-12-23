@@ -1,0 +1,29 @@
+<svg width="1284" height="2778" viewBox="0 0 1284 2778" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo azul sólido -->
+  <rect width="1284" height="2778" fill="#2E78C7"/>
+  
+  <!-- Círculo blanco de fondo para el icono -->
+  <circle cx="642" cy="1200" r="200" fill="#FFFFFF"/>
+  
+  <!-- Libro simplificado -->
+  <g transform="translate(642, 1200)">
+    <!-- Página izquierda -->
+    <path d="M-10 -80 L-10 80 Q-70 70 -120 80 L-120 -70 Q-70 -80 -10 -80 Z" fill="#2E78C7"/>
+    <!-- Página derecha -->
+    <path d="M10 -80 L10 80 Q70 70 120 80 L120 -70 Q70 -80 10 -80 Z" fill="#2E78C7"/>
+    <!-- Lomo -->
+    <rect x="-10" y="-80" width="20" height="160" fill="#1B5A9E"/>
+  </g>
+  
+  <!-- Check verde -->
+  <g transform="translate(760, 1080)">
+    <circle cx="0" cy="0" r="50" fill="#22C55E"/>
+    <path d="M-20 0 L-8 15 L22 -15" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Texto Testeate -->
+  <text x="642" y="1520" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Testeate</text>
+  
+  <!-- Subtítulo -->
+  <text x="642" y="1590" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">Prepara tus oposiciones</text>
+</svg>
