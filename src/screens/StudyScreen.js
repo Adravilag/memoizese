@@ -74,6 +74,8 @@ export default function StudyScreen({ route, navigation }) {
   const [totalMasteredCards, setTotalMasteredCards] = useState(0); // Total de tarjetas dominadas
   const [selectedCardCount, setSelectedCardCount] = useState(null); // Cantidad de tarjetas seleccionadas
   const [reverseMode, setReverseMode] = useState(false); // Modo inverso: ES→EN
+  const [showHint, setShowHint] = useState(false); // Mostrar pistas para tarjetas difíciles
+  const [sessionFailCounts, setSessionFailCounts] = useState({}); // Conteo de fallos por tarjeta en esta sesión
 
   useEffect(() => {
     loadStudyData();
@@ -201,6 +203,77 @@ export default function StudyScreen({ route, navigation }) {
     return 'incorrect';
   };
 
+  // Generar pistas para una tarjeta difícil
+  const generateHints = (card) => {
+    const hints = [];
+    const answer = reverseMode ? card.front : card.back;
+    
+    // 1. Primera letra
+    if (answer && answer.length > 0) {
+      hints.push({
+        type: 'firstLetter',
+        icon: '🔤',
+        label: 'Primera letra',
+        value: answer.charAt(0).toUpperCase() + '...',
+      });
+    }
+    
+    // 2. Número de palabras/caracteres
+    const wordCount = answer.split(' ').length;
+    const charCount = answer.length;
+    hints.push({
+      type: 'length',
+      icon: '📏',
+      label: 'Longitud',
+      value: wordCount > 1 ? `${wordCount} palabras (${charCount} letras)` : `${charCount} letras`,
+    });
+    
+    // 3. Si tiene ejemplo, mostrar parte del contexto
+    if (card.example) {
+      // Ocultar la palabra en el ejemplo
+      const hiddenExample = card.example.replace(
+        new RegExp(card.front, 'gi'),
+        '_____'
+      );
+      hints.push({
+        type: 'context',
+        icon: '📖',
+        label: 'Ejemplo',
+        value: hiddenExample,
+      });
+    }
+    
+    // 4. Categoría o nivel si está disponible
+    if (card.level) {
+      hints.push({
+        type: 'level',
+        icon: '📊',
+        label: 'Nivel',
+        value: `Cambridge ${card.level}`,
+      });
+    }
+    
+    // 5. Pista fonética (primeras sílabas de la pronunciación)
+    if (card.pronunciation && !reverseMode) {
+      const pronPart = card.pronunciation.slice(0, Math.min(card.pronunciation.length, 6)) + '...';
+      hints.push({
+        type: 'sound',
+        icon: '🔊',
+        label: 'Suena como',
+        value: pronPart,
+      });
+    }
+    
+    return hints;
+  };
+
+  // Verificar si la tarjeta necesita pistas (problemática o fallada varias veces)
+  const cardNeedsHints = (card) => {
+    if (!card) return false;
+    const sessionFails = sessionFailCounts[card.id] || 0;
+    return card.isProblematic || card.consecutiveFailures >= 2 || sessionFails >= 1;
+  };
+
   // Abrir modo escritura
   const openWriteMode = () => {
     setShowWriteMode(true);
@@ -263,8 +336,14 @@ export default function StudyScreen({ route, navigation }) {
       // Lista actualizada de falladas
       let updatedFailedCards = [...failedCards];
       
-      // Registrar tarjeta fallada
+      // Registrar tarjeta fallada y actualizar conteo de sesión
       if (!isCorrect) {
+        // Incrementar contador de fallos en esta sesión
+        setSessionFailCounts(prev => ({
+          ...prev,
+          [currentCard.id]: (prev[currentCard.id] || 0) + 1,
+        }));
+        
         // Solo añadir si no está ya en la lista
         const exists = failedCards.some(card => card.id === currentCard.id);
         if (!exists) {
@@ -280,8 +359,9 @@ export default function StudyScreen({ route, navigation }) {
       if (currentIndex < cards.length - 1) {
         setCurrentIndex(currentIndex + 1);
         setIsFlipped(false);
-        // Resetear estados de modo escritura
+        // Resetear estados de modo escritura y pistas
         setShowWriteMode(false);
+        setShowHint(false);
         setUserAnswer('');
         setAnswerResult(null);
       } else {
@@ -864,6 +944,50 @@ export default function StudyScreen({ route, navigation }) {
                   </Text>
                 )}
                 
+                {/* Indicador de tarjeta difícil */}
+                {cardNeedsHints(currentCard) && (
+                  <View style={[styles.difficultBadge, { backgroundColor: '#FF980020' }]}>
+                    <Text style={styles.difficultBadgeText}>
+                      ⚠️ Tarjeta difícil
+                    </Text>
+                  </View>
+                )}
+                
+                {/* Botón de pista para tarjetas difíciles */}
+                {cardNeedsHints(currentCard) && !showHint && !showWriteMode && (
+                  <TouchableOpacity
+                    style={[styles.hintButton, { backgroundColor: '#FBBF2420', borderColor: '#FBBF24' }]}
+                    onPress={() => setShowHint(true)}
+                  >
+                    <Text style={styles.hintButtonText}>💡 Ver pista</Text>
+                  </TouchableOpacity>
+                )}
+                
+                {/* Mostrar pistas */}
+                {showHint && !showWriteMode && (
+                  <View style={[styles.hintsContainer, { backgroundColor: theme.colors.background }]}>
+                    <View style={styles.hintsHeader}>
+                      <Text style={[styles.hintsTitle, { color: '#FBBF24' }]}>💡 Pistas</Text>
+                      <TouchableOpacity onPress={() => setShowHint(false)}>
+                        <Text style={[styles.hintsClose, { color: theme.colors.textSecondary }]}>✕</Text>
+                      </TouchableOpacity>
+                    </View>
+                    {generateHints(currentCard).map((hint, index) => (
+                      <View key={index} style={styles.hintItem}>
+                        <Text style={styles.hintIcon}>{hint.icon}</Text>
+                        <View style={styles.hintContent}>
+                          <Text style={[styles.hintLabel, { color: theme.colors.textSecondary }]}>
+                            {hint.label}
+                          </Text>
+                          <Text style={[styles.hintValue, { color: theme.colors.text }]}>
+                            {hint.value}
+                          </Text>
+                        </View>
+                      </View>
+                    ))}
+                  </View>
+                )}
+                
                 {/* Botón para modo escritura */}
                 {!showWriteMode && (
                   <TouchableOpacity
@@ -1336,6 +1460,79 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     textAlign: 'center',
     marginTop: 6,
+  },
+  // Estilos para tarjetas difíciles y pistas
+  difficultBadge: {
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 12,
+    marginTop: 8,
+    alignSelf: 'center',
+  },
+  difficultBadgeText: {
+    fontSize: 12,
+    color: '#FF9800',
+    fontWeight: '600',
+  },
+  hintButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 20,
+    borderWidth: 1,
+    marginTop: 12,
+    alignSelf: 'center',
+  },
+  hintButtonText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#FBBF24',
+  },
+  hintsContainer: {
+    marginTop: 12,
+    padding: 12,
+    borderRadius: 12,
+    width: '100%',
+  },
+  hintsHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  hintsTitle: {
+    fontSize: 14,
+    fontWeight: '700',
+  },
+  hintsClose: {
+    fontSize: 18,
+    padding: 4,
+  },
+  hintItem: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginBottom: 8,
+    paddingVertical: 4,
+  },
+  hintIcon: {
+    fontSize: 16,
+    marginRight: 10,
+    width: 24,
+  },
+  hintContent: {
+    flex: 1,
+  },
+  hintLabel: {
+    fontSize: 11,
+    textTransform: 'uppercase',
+    letterSpacing: 0.5,
+    marginBottom: 2,
+  },
+  hintValue: {
+    fontSize: 14,
+    fontWeight: '500',
   },
   responseContainer: {
     padding: 20,
