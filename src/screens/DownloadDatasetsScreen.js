@@ -43,9 +43,10 @@ export default function DownloadDatasetsScreen({ navigation }) {
       const data = await fetchCatalog();
       setCatalog(data);
       
-      // Cargar tests ya descargados
+      // Cargar tests ya descargados (solo los que tienen isDownloaded: true)
       const existingTests = await getTests();
-      const existingIds = new Set(existingTests.map(t => t.id));
+      const downloadedTests = existingTests.filter(t => t.isDownloaded === true);
+      const existingIds = new Set(downloadedTests.map(t => t.id));
       setDownloadedIds(existingIds);
       
     } catch (err) {
@@ -137,13 +138,13 @@ export default function DownloadDatasetsScreen({ navigation }) {
     selectedCategory === 'all' || d.category === selectedCategory
   ) || [];
 
-  const styles = createStyles(theme);
+  const styles = createStyles(theme.colors);
 
   if (loading) {
     return (
       <SafeAreaView style={styles.container} edges={['bottom']}>
         <View style={styles.centerContent}>
-          <ActivityIndicator size="large" color={theme.primary} />
+          <ActivityIndicator size="large" color={theme.colors.primary} />
           <Text style={styles.loadingText}>Cargando catálogo...</Text>
         </View>
       </SafeAreaView>
@@ -154,7 +155,7 @@ export default function DownloadDatasetsScreen({ navigation }) {
     return (
       <SafeAreaView style={styles.container} edges={['bottom']}>
         <View style={styles.centerContent}>
-          <CloudIcon size={64} color={theme.textSecondary} />
+          <CloudIcon size={64} color={theme.colors.textSecondary} />
           <Text style={styles.errorText}>{error}</Text>
           <TouchableOpacity style={styles.retryButton} onPress={loadCatalog}>
             <RefreshIcon size={20} color="#fff" />
@@ -237,8 +238,8 @@ export default function DownloadDatasetsScreen({ navigation }) {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={onRefresh}
-            colors={[theme.primary]}
-            tintColor={theme.primary}
+            colors={[theme.colors.primary]}
+            tintColor={theme.colors.primary}
           />
         }
       >
