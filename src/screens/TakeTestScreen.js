@@ -101,10 +101,53 @@ export default function TakeTestScreen({ route, navigation }) {
     return unsubscribe;
   }, [navigation, userAnswers, isFinishing]);
 
+  // Función para barajar un array (Fisher-Yates shuffle)
+  const shuffleArray = (array) => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  };
+
   const loadTest = async () => {
     try {
       const loadedTest = await getTestById(testId);
-      setTest(loadedTest);
+      
+      // Barajar preguntas
+      const shuffledQuestions = shuffleArray(loadedTest.questions);
+      
+      // Barajar opciones de cada pregunta (manteniendo el tracking de la correcta)
+      const questionsWithShuffledOptions = shuffledQuestions.map(question => {
+        const options = [...question.options];
+        const correctLetter = question.correctAnswer;
+        const correctOption = options.find(o => o.letter === correctLetter);
+        
+        // Barajar opciones
+        const shuffledOptions = shuffleArray(options);
+        
+        // Reasignar letras a, b, c, d en nuevo orden
+        const newOptions = shuffledOptions.map((opt, idx) => ({
+          ...opt,
+          letter: String.fromCharCode(97 + idx) // a, b, c, d
+        }));
+        
+        // Encontrar la nueva letra de la respuesta correcta
+        const newCorrectIndex = shuffledOptions.findIndex(o => o === correctOption);
+        const newCorrectLetter = String.fromCharCode(97 + newCorrectIndex);
+        
+        return {
+          ...question,
+          options: newOptions,
+          correctAnswer: newCorrectLetter
+        };
+      });
+      
+      setTest({
+        ...loadedTest,
+        questions: questionsWithShuffledOptions
+      });
     } catch (error) {
       console.error('Error cargando test:', error);
       Alert.alert('Error', 'No se pudo cargar el test');

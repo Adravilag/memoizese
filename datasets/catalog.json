@@ -1,5 +1,5 @@
 {
-  "version": "2.1.0",
+  "version": "2.2.0",
   "lastUpdated": "2025-12-23",
   "categories": [
     {
@@ -103,6 +103,30 @@
       "file": "grammar/04_tenses_future.txt",
       "version": "1.0.0",
       "size": 3700
+    },
+    {
+      "id": "online_grammar_05",
+      "name": "📖 Passive & Active Voice",
+      "description": "Voz pasiva y activa en todos los tiempos verbales",
+      "category": "grammar_extra",
+      "type": "test",
+      "level": "B1-C1",
+      "questionCount": 20,
+      "file": "grammar/05_passive_active_voice.txt",
+      "version": "1.0.0",
+      "size": 4000
+    },
+    {
+      "id": "online_grammar_06",
+      "name": "📖 Conditionals Complete",
+      "description": "Zero, First, Second, Third + Mixed Conditionals",
+      "category": "grammar_extra",
+      "type": "test",
+      "level": "B1-C1",
+      "questionCount": 20,
+      "file": "grammar/06_conditionals_complete.txt",
+      "version": "1.0.0",
+      "size": 3900
     },
     {
       "id": "online_deck_business_01",
