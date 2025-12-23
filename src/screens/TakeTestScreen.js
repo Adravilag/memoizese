@@ -9,7 +9,7 @@ import {
   ScrollView
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { getTestById, saveResult } from '../utils/storage';
+import { getTestById, saveTestResult } from '../utils/storage';
 import { useTheme } from '../context/ThemeContext';
 import { BooksIcon, ClipboardEditIcon, CheckCircleIcon, XCircleIcon } from '../components/Icons';
 
@@ -123,6 +123,17 @@ export default function TakeTestScreen({ route, navigation }) {
         const options = [...question.options];
         const correctLetter = question.correctAnswer;
         const correctOption = options.find(o => o.letter === correctLetter);
+        
+        // Detectar si alguna opción referencia a otras letras (ej: "Both A and B", "A y C")
+        const hasLetterReference = options.some(opt => 
+          /\b(both|option|opción|y)\s*[ABCD]\b/i.test(opt.text) ||
+          /\b[ABCD]\s*(and|y|&)\s*[ABCD]\b/i.test(opt.text)
+        );
+        
+        // Si hay referencias a letras, no barajar las opciones
+        if (hasLetterReference) {
+          return question;
+        }
         
         // Barajar opciones
         const shuffledOptions = shuffleArray(options);
@@ -281,7 +292,7 @@ export default function TakeTestScreen({ route, navigation }) {
     setIsFinishing(true);
 
     try {
-      await saveResult(result);
+      await saveTestResult(result);
       navigation.replace('Results', { result });
     } catch (error) {
       console.error('Error guardando resultado:', error);

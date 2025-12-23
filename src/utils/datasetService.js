@@ -15,8 +15,8 @@ const GITHUB_CONFIG = {
 const RAW_BASE_URL = `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/${GITHUB_CONFIG.branch}/${GITHUB_CONFIG.datasetsPath}`;
 const CDN_BASE_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}@${GITHUB_CONFIG.branch}/${GITHUB_CONFIG.datasetsPath}`;
 
-// Usar CDN para mejor rendimiento (cachea los archivos)
-const BASE_URL = CDN_BASE_URL;
+// Usar RAW para evitar caché del CDN (cambiar a CDN_BASE_URL para producción)
+const BASE_URL = RAW_BASE_URL;
 
 /**
  * Obtiene el catálogo de datasets disponibles
