@@ -14,10 +14,12 @@ import { useTheme } from '../context/ThemeContext';
 import { DownloadIcon, CheckCircleIcon, CloudIcon, RefreshIcon } from '../components/Icons';
 import { 
   fetchCatalog, 
-  downloadAndParseDataset, 
+  downloadAndParseDataset,
+  downloadAndParseDeck,
+  downloadContent,
   checkConnection 
 } from '../utils/datasetService';
-import { saveTest, getTests } from '../utils/storage';
+import { saveTest, getTests, saveDeck, getDecks } from '../utils/storage';
 
 export default function DownloadDatasetsScreen({ navigation }) {
   const { theme } = useTheme();
@@ -43,10 +45,15 @@ export default function DownloadDatasetsScreen({ navigation }) {
       const data = await fetchCatalog();
       setCatalog(data);
       
-      // Cargar tests ya descargados (solo los que tienen isDownloaded: true)
+      // Cargar tests y decks ya descargados (solo los que tienen isDownloaded: true)
       const existingTests = await getTests();
+      const existingDecks = await getDecks();
       const downloadedTests = existingTests.filter(t => t.isDownloaded === true);
-      const existingIds = new Set(downloadedTests.map(t => t.id));
+      const downloadedDecks = existingDecks.filter(d => d.isDownloaded === true);
+      const existingIds = new Set([
+        ...downloadedTests.map(t => t.id),
+        ...downloadedDecks.map(d => d.id)
+      ]);
       setDownloadedIds(existingIds);
       
     } catch (err) {
@@ -72,17 +79,24 @@ export default function DownloadDatasetsScreen({ navigation }) {
     try {
       setDownloading(dataset.id);
       
-      const parsedTest = await downloadAndParseDataset(dataset);
+      const isDeck = dataset.type === 'deck';
       
-      // Guardar como test
-      await saveTest(parsedTest);
+      if (isDeck) {
+        // Descargar mazo
+        const parsedDeck = await downloadAndParseDeck(dataset);
+        await saveDeck(parsedDeck);
+      } else {
+        // Descargar test
+        const parsedTest = await downloadAndParseDataset(dataset);
+        await saveTest(parsedTest);
+      }
       
       // Actualizar lista de descargados
       setDownloadedIds(prev => new Set([...prev, dataset.id]));
       
       Alert.alert(
         '✅ Descargado',
-        `"${dataset.name}" se ha añadido a tus tests.`,
+        `"${dataset.name}" se ha añadido a tus ${isDeck ? 'mazos' : 'tests'}.`,
         [{ text: 'OK' }]
       );
       
@@ -104,30 +118,50 @@ export default function DownloadDatasetsScreen({ navigation }) {
     );
     
     if (datasetsToDownload.length === 0) {
-      Alert.alert('Info', 'Ya tienes todos los datasets de esta categoría.');
+      Alert.alert('Info', 'Ya tienes todo el contenido de esta categoría.');
       return;
+    }
+    
+    const testsCount = datasetsToDownload.filter(d => d.type !== 'deck').length;
+    const decksCount = datasetsToDownload.filter(d => d.type === 'deck').length;
+    let message = `¿Descargar ${datasetsToDownload.length} items?`;
+    if (testsCount > 0 && decksCount > 0) {
+      message = `¿Descargar ${testsCount} tests y ${decksCount} mazos?`;
+    } else if (decksCount > 0) {
+      message = `¿Descargar ${decksCount} mazos?`;
+    } else {
+      message = `¿Descargar ${testsCount} tests?`;
     }
     
     Alert.alert(
       'Descargar todos',
-      `¿Descargar ${datasetsToDownload.length} datasets?`,
+      message,
       [
         { text: 'Cancelar', style: 'cancel' },
         {
           text: 'Descargar',
           onPress: async () => {
+            let downloaded = 0;
             for (const dataset of datasetsToDownload) {
               try {
                 setDownloading(dataset.id);
-                const parsedTest = await downloadAndParseDataset(dataset);
-                await saveTest(parsedTest);
+                
+                if (dataset.type === 'deck') {
+                  const parsedDeck = await downloadAndParseDeck(dataset);
+                  await saveDeck(parsedDeck);
+                } else {
+                  const parsedTest = await downloadAndParseDataset(dataset);
+                  await saveTest(parsedTest);
+                }
+                
                 setDownloadedIds(prev => new Set([...prev, dataset.id]));
+                downloaded++;
               } catch (err) {
                 console.error(`Error downloading ${dataset.id}:`, err);
               }
             }
             setDownloading(null);
-            Alert.alert('✅ Completado', `Se han descargado ${datasetsToDownload.length} datasets.`);
+            Alert.alert('✅ Completado', `Se han descargado ${downloaded} items.`);
           },
         },
       ]
@@ -246,15 +280,23 @@ export default function DownloadDatasetsScreen({ navigation }) {
         {filteredDatasets.map(dataset => {
           const isDownloaded = downloadedIds.has(dataset.id);
           const isDownloading = downloading === dataset.id;
+          const isDeck = dataset.type === 'deck';
           
           return (
             <View key={dataset.id} style={styles.datasetCard}>
               <View style={styles.datasetInfo}>
-                <Text style={styles.datasetName}>{dataset.name}</Text>
+                <View style={styles.datasetHeader}>
+                  <Text style={styles.datasetName}>{dataset.name}</Text>
+                  <View style={[styles.typeBadge, isDeck ? styles.deckBadge : styles.testBadge]}>
+                    <Text style={styles.typeBadgeText}>
+                      {isDeck ? '🃏 Mazo' : '📝 Test'}
+                    </Text>
+                  </View>
+                </View>
                 <Text style={styles.datasetDescription}>{dataset.description}</Text>
                 <View style={styles.datasetMeta}>
                   <Text style={styles.datasetMetaText}>
-                    📝 {dataset.questionCount} preguntas
+                    {isDeck ? `🃏 ${dataset.cardCount} tarjetas` : `📝 ${dataset.questionCount} preguntas`}
                   </Text>
                   <Text style={styles.datasetMetaText}>
                     📊 {dataset.level}
@@ -404,8 +446,31 @@ const createStyles = (theme) => StyleSheet.create({
   datasetInfo: {
     flex: 1,
   },
+  datasetHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
   datasetName: {
     fontSize: 16,
+    fontWeight: '600',
+    color: theme.text,
+    flex: 1,
+  },
+  typeBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 10,
+  },
+  testBadge: {
+    backgroundColor: theme.primary + '20',
+  },
+  deckBadge: {
+    backgroundColor: theme.warning + '30',
+  },
+  typeBadgeText: {
+    fontSize: 10,
     fontWeight: '600',
     color: theme.text,
   },

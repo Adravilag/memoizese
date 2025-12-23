@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "lastUpdated": "2025-12-23",
   "categories": [
     {
@@ -26,6 +26,21 @@
       "id": "grammar_extra",
       "name": "📖 Grammar Extra",
       "description": "Temas adicionales de gramática"
+    },
+    {
+      "id": "decks_business",
+      "name": "🃏 Mazos: Negocios",
+      "description": "Flashcards de vocabulario empresarial"
+    },
+    {
+      "id": "decks_grammar",
+      "name": "🃏 Mazos: Gramática",
+      "description": "Flashcards de gramática esencial"
+    },
+    {
+      "id": "decks_vocabulary",
+      "name": "🃏 Mazos: Vocabulario",
+      "description": "Flashcards de vocabulario variado"
     }
   ],
   "datasets": [
@@ -34,6 +49,7 @@
       "name": "💼 Business English",
       "description": "Vocabulario profesional: ROI, stakeholders, mergers, KPIs",
       "category": "business",
+      "type": "test",
       "level": "B2-C1",
       "questionCount": 20,
       "file": "business/01_business_english.txt",
@@ -45,6 +61,7 @@
       "name": "🎓 Academic Vocabulary",
       "description": "Palabras sofisticadas: ubiquitous, ephemeral, pragmatic",
       "category": "advanced",
+      "type": "test",
       "level": "C1-C2",
       "questionCount": 20,
       "file": "advanced/01_academic_vocabulary.txt",
@@ -56,6 +73,7 @@
       "name": "🔗 Common Collocations",
       "description": "Combinaciones naturales: make/do, strong/heavy",
       "category": "collocations",
+      "type": "test",
       "level": "B2-C1",
       "questionCount": 20,
       "file": "collocations/01_common_collocations.txt",
@@ -67,6 +85,7 @@
       "name": "📈 Advanced Phrasal Verbs",
       "description": "Phrasal verbs complejos: phase out, crack down, wind up",
       "category": "phrasal_advanced",
+      "type": "test",
       "level": "B2-C1",
       "questionCount": 20,
       "file": "phrasal_verbs/02_advanced_phrasal_verbs.txt",
@@ -78,11 +97,72 @@
       "name": "📖 Future Tenses",
       "description": "Will, going to, Future Perfect, Future Continuous",
       "category": "grammar_extra",
+      "type": "test",
       "level": "B1-B2",
       "questionCount": 20,
       "file": "grammar/04_tenses_future.txt",
       "version": "1.0.0",
       "size": 3700
+    },
+    {
+      "id": "online_deck_business_01",
+      "name": "🃏 Business English Flashcards",
+      "description": "20 términos esenciales de negocios",
+      "category": "decks_business",
+      "type": "deck",
+      "level": "B2-C1",
+      "cardCount": 20,
+      "file": "decks/01_business_flashcards.json",
+      "version": "1.0.0",
+      "size": 2800
+    },
+    {
+      "id": "online_deck_grammar_01",
+      "name": "🃏 Irregular Verbs (Top 50)",
+      "description": "Los 50 verbos irregulares más usados",
+      "category": "decks_grammar",
+      "type": "deck",
+      "level": "A2-B2",
+      "cardCount": 50,
+      "file": "decks/02_irregular_verbs.json",
+      "version": "1.0.0",
+      "size": 3200
+    },
+    {
+      "id": "online_deck_vocabulary_01",
+      "name": "🃏 False Friends (ES-EN)",
+      "description": "25 palabras que parecen iguales pero no lo son",
+      "category": "decks_vocabulary",
+      "type": "deck",
+      "level": "B1-B2",
+      "cardCount": 25,
+      "file": "decks/03_false_friends.json",
+      "version": "1.0.0",
+      "size": 2600
+    },
+    {
+      "id": "online_deck_grammar_02",
+      "name": "🃏 Phrasal Verbs Flashcards",
+      "description": "25 phrasal verbs imprescindibles",
+      "category": "decks_grammar",
+      "type": "deck",
+      "level": "B1-B2",
+      "cardCount": 25,
+      "file": "decks/04_phrasal_verbs_flashcards.json",
+      "version": "1.0.0",
+      "size": 2500
+    },
+    {
+      "id": "online_deck_vocabulary_02",
+      "name": "🃏 Linking Words & Connectors",
+      "description": "25 conectores para mejorar tu writing",
+      "category": "decks_vocabulary",
+      "type": "deck",
+      "level": "B2-C1",
+      "cardCount": 25,
+      "file": "decks/05_connectors.json",
+      "version": "1.0.0",
+      "size": 2400
     }
   ]
 }

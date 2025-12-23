@@ -1,0 +1,31 @@
+{
+  "name": "False Friends (Spanish-English)",
+  "description": "Palabras que parecen iguales pero significan diferente",
+  "cards": [
+    { "front": "Actually", "back": "En realidad (NO actualmente = currently)" },
+    { "front": "Eventually", "back": "Finalmente (NO eventualmente = possibly)" },
+    { "front": "Sensible", "back": "Sensato (NO sensible = sensitive)" },
+    { "front": "Sympathetic", "back": "Comprensivo (NO simpático = nice/friendly)" },
+    { "front": "Embarrassed", "back": "Avergonzado (NO embarazada = pregnant)" },
+    { "front": "Assist", "back": "Ayudar (NO asistir = attend)" },
+    { "front": "Pretend", "back": "Fingir (NO pretender = intend/aim)" },
+    { "front": "Realize", "back": "Darse cuenta (NO realizar = carry out)" },
+    { "front": "Library", "back": "Biblioteca (NO librería = bookshop)" },
+    { "front": "Exit", "back": "Salida (NO éxito = success)" },
+    { "front": "Fabric", "back": "Tela (NO fábrica = factory)" },
+    { "front": "Career", "back": "Carrera profesional (NO carrera = race/degree)" },
+    { "front": "Carpet", "back": "Alfombra (NO carpeta = folder)" },
+    { "front": "Conductor", "back": "Director de orquesta (NO conductor = driver)" },
+    { "front": "Constipated", "back": "Estreñido (NO constipado = have a cold)" },
+    { "front": "Demand", "back": "Exigir (NO demandar = sue)" },
+    { "front": "Lecture", "back": "Conferencia (NO lectura = reading)" },
+    { "front": "Parents", "back": "Padres (NO parientes = relatives)" },
+    { "front": "Resume", "back": "Reanudar (NO resumir = summarize)" },
+    { "front": "Sane", "back": "Cuerdo (NO sano = healthy)" },
+    { "front": "Success", "back": "Éxito (NO suceso = event)" },
+    { "front": "Support", "back": "Apoyar (NO soportar = tolerate/bear)" },
+    { "front": "Topic", "back": "Tema (NO tópico = cliché)" },
+    { "front": "Advertise", "back": "Anunciar (NO advertir = warn)" },
+    { "front": "Compromise", "back": "Acuerdo mutuo (NO compromiso = commitment)" }
+  ]
+}

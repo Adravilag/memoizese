@@ -138,6 +138,53 @@ export const downloadAndParseDataset = async (datasetInfo) => {
 };
 
 /**
+ * Descarga y parsea un mazo (deck) de flashcards
+ * @param {Object} datasetInfo - Info del deck del catálogo
+ */
+export const downloadAndParseDeck = async (datasetInfo) => {
+  try {
+    const content = await fetchDataset(datasetInfo.file);
+    const deckData = JSON.parse(content);
+    
+    return {
+      id: datasetInfo.id,
+      name: deckData.name || datasetInfo.name,
+      description: deckData.description || datasetInfo.description,
+      category: datasetInfo.category,
+      level: datasetInfo.level,
+      isDownloaded: true,
+      downloadedAt: new Date().toISOString(),
+      version: datasetInfo.version,
+      cards: deckData.cards.map((card, index) => ({
+        id: `card_${index + 1}`,
+        front: card.front,
+        back: card.back,
+        // Campos para el algoritmo SM-2
+        repetitions: 0,
+        easeFactor: 2.5,
+        interval: 0,
+        nextReview: null,
+      })),
+    };
+  } catch (error) {
+    console.error('Error downloading and parsing deck:', error);
+    throw error;
+  }
+};
+
+/**
+ * Descarga cualquier tipo de contenido (test o deck)
+ * @param {Object} datasetInfo - Info del dataset del catálogo
+ */
+export const downloadContent = async (datasetInfo) => {
+  if (datasetInfo.type === 'deck') {
+    return downloadAndParseDeck(datasetInfo);
+  } else {
+    return downloadAndParseDataset(datasetInfo);
+  }
+};
+
+/**
  * Verifica si hay conexión a internet probando el catálogo
  */
 export const checkConnection = async () => {
@@ -163,6 +210,8 @@ export default {
   fetchDataset,
   parseVocabularyFile,
   downloadAndParseDataset,
+  downloadAndParseDeck,
+  downloadContent,
   checkConnection,
   getFileUrl,
   GITHUB_CONFIG,

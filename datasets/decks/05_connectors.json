@@ -1,0 +1,31 @@
+{
+  "name": "Linking Words & Connectors",
+  "description": "Conectores para mejorar tu writing",
+  "cards": [
+    { "front": "However", "back": "Sin embargo (contraste)" },
+    { "front": "Therefore", "back": "Por lo tanto (consecuencia)" },
+    { "front": "Furthermore", "back": "Además (adición formal)" },
+    { "front": "Nevertheless", "back": "No obstante (contraste fuerte)" },
+    { "front": "Moreover", "back": "Es más / Además (adición)" },
+    { "front": "Although", "back": "Aunque (concesión)" },
+    { "front": "Despite", "back": "A pesar de (+ noun/-ing)" },
+    { "front": "In spite of", "back": "A pesar de (+ noun/-ing)" },
+    { "front": "Whereas", "back": "Mientras que (contraste)" },
+    { "front": "On the other hand", "back": "Por otro lado" },
+    { "front": "In contrast", "back": "En contraste" },
+    { "front": "As a result", "back": "Como resultado" },
+    { "front": "Consequently", "back": "En consecuencia" },
+    { "front": "Hence", "back": "Por tanto (formal)" },
+    { "front": "Thus", "back": "Así / Por tanto" },
+    { "front": "In addition", "back": "Además" },
+    { "front": "Besides", "back": "Además de" },
+    { "front": "Not only... but also", "back": "No solo... sino también" },
+    { "front": "First of all", "back": "En primer lugar" },
+    { "front": "To sum up", "back": "En resumen" },
+    { "front": "In conclusion", "back": "En conclusión" },
+    { "front": "All in all", "back": "En general / En definitiva" },
+    { "front": "For instance", "back": "Por ejemplo" },
+    { "front": "Such as", "back": "Tales como" },
+    { "front": "In other words", "back": "En otras palabras" }
+  ]
+}

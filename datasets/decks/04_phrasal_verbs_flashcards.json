@@ -1,0 +1,31 @@
+{
+  "name": "Phrasal Verbs Flashcards",
+  "description": "Los phrasal verbs más importantes",
+  "cards": [
+    { "front": "give up", "back": "Rendirse / Dejar de hacer algo" },
+    { "front": "look after", "back": "Cuidar de" },
+    { "front": "put off", "back": "Posponer / Aplazar" },
+    { "front": "turn down", "back": "Rechazar / Bajar (volumen)" },
+    { "front": "find out", "back": "Descubrir / Averiguar" },
+    { "front": "carry on", "back": "Continuar" },
+    { "front": "bring up", "back": "Criar / Mencionar un tema" },
+    { "front": "set up", "back": "Establecer / Montar" },
+    { "front": "take off", "back": "Despegar / Quitarse (ropa)" },
+    { "front": "break down", "back": "Averiarse / Derrumbarse" },
+    { "front": "look forward to", "back": "Esperar con ilusión" },
+    { "front": "get along with", "back": "Llevarse bien con" },
+    { "front": "run out of", "back": "Quedarse sin" },
+    { "front": "come up with", "back": "Idear / Proponer" },
+    { "front": "put up with", "back": "Aguantar / Tolerar" },
+    { "front": "figure out", "back": "Entender / Resolver" },
+    { "front": "work out", "back": "Hacer ejercicio / Resolver" },
+    { "front": "make up", "back": "Inventar / Reconciliarse / Maquillarse" },
+    { "front": "pick up", "back": "Recoger / Aprender rápido" },
+    { "front": "turn out", "back": "Resultar ser" },
+    { "front": "go through", "back": "Pasar por / Revisar" },
+    { "front": "look into", "back": "Investigar" },
+    { "front": "take over", "back": "Hacerse cargo / Adquirir" },
+    { "front": "hold on", "back": "Esperar / Agarrarse" },
+    { "front": "end up", "back": "Terminar (en situación)" }
+  ]
+}

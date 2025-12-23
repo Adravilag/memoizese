@@ -1,0 +1,26 @@
+{
+  "name": "Business English Flashcards",
+  "description": "Vocabulario esencial de negocios",
+  "cards": [
+    { "front": "ROI", "back": "Return on Investment - Retorno de la inversión" },
+    { "front": "Stakeholder", "back": "Persona o grupo con interés en una empresa" },
+    { "front": "Merger", "back": "Fusión - Cuando dos empresas se unen en una" },
+    { "front": "Outsource", "back": "Externalizar - Contratar trabajo a empresa externa" },
+    { "front": "Bottom line", "back": "Resultado final / El punto esencial" },
+    { "front": "Leverage", "back": "Apalancamiento - Usar algo para máxima ventaja" },
+    { "front": "Downsize", "back": "Reducir plantilla - Despedir empleados" },
+    { "front": "Market share", "back": "Cuota de mercado - % de ventas totales" },
+    { "front": "Blue chip company", "back": "Empresa grande, fiable y bien establecida" },
+    { "front": "Scalable", "back": "Escalable - Capaz de crecer fácilmente" },
+    { "front": "Cash flow", "back": "Flujo de caja - Movimiento de dinero" },
+    { "front": "Due diligence", "back": "Diligencia debida - Investigación exhaustiva" },
+    { "front": "Bootstrap", "back": "Arrancar con financiación mínima externa" },
+    { "front": "B2B", "back": "Business to Business - Negocio a negocio" },
+    { "front": "Overhead costs", "back": "Gastos generales - Costes fijos del negocio" },
+    { "front": "Pitch", "back": "Presentación para persuadir inversores/clientes" },
+    { "front": "Pivot", "back": "Pivotar - Cambiar estrategia o dirección" },
+    { "front": "KPI", "back": "Key Performance Indicator - Indicador clave" },
+    { "front": "Synergy", "back": "Sinergia - Esfuerzo combinado da mejores resultados" },
+    { "front": "Venture capital", "back": "Capital riesgo - Financiación para startups" }
+  ]
+}
