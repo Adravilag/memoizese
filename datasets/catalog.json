@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2024-12-23",
+  "version": "1.1.0",
+  "lastUpdated": "2025-12-23",
   "categories": [
     {
       "id": "vocabulary",
@@ -11,6 +11,11 @@
       "id": "grammar",
       "name": "📝 Gramática",
       "description": "Tests de gramática inglesa"
+    },
+    {
+      "id": "phrasal_verbs",
+      "name": "🔄 Phrasal Verbs",
+      "description": "Verbos frasales comunes"
     },
     {
       "id": "idioms",
@@ -238,6 +243,61 @@
       "file": "vocabulary/20_work_and_jobs.txt",
       "version": "1.0.0",
       "size": 8500
+    },
+    {
+      "id": "grammar_01_present",
+      "name": "⏰ Present Tenses",
+      "description": "Tiempos verbales en presente",
+      "category": "grammar",
+      "level": "B1-B2",
+      "questionCount": 20,
+      "file": "grammar/01_tenses_present.txt",
+      "version": "1.0.0",
+      "size": 3500
+    },
+    {
+      "id": "grammar_02_past",
+      "name": "⏪ Past Tenses",
+      "description": "Tiempos verbales en pasado",
+      "category": "grammar",
+      "level": "B1-B2",
+      "questionCount": 20,
+      "file": "grammar/02_tenses_past.txt",
+      "version": "1.0.0",
+      "size": 3600
+    },
+    {
+      "id": "grammar_03_conditionals",
+      "name": "🔀 Conditionals",
+      "description": "Oraciones condicionales (0, 1, 2, 3)",
+      "category": "grammar",
+      "level": "B1-B2",
+      "questionCount": 20,
+      "file": "grammar/03_conditionals.txt",
+      "version": "1.0.0",
+      "size": 3800
+    },
+    {
+      "id": "phrasal_01_common",
+      "name": "🔄 Common Phrasal Verbs",
+      "description": "Phrasal verbs más utilizados",
+      "category": "phrasal_verbs",
+      "level": "B1-B2",
+      "questionCount": 20,
+      "file": "phrasal_verbs/01_common_phrasal_verbs.txt",
+      "version": "1.0.0",
+      "size": 3200
+    },
+    {
+      "id": "idioms_01_common",
+      "name": "💬 Common Idioms",
+      "description": "Expresiones idiomáticas comunes",
+      "category": "idioms",
+      "level": "B1-B2",
+      "questionCount": 20,
+      "file": "idioms/01_common_idioms.txt",
+      "version": "1.0.0",
+      "size": 3400
     }
   ]
 }
